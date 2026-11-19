@@ -1,11 +1,19 @@
 # DRT Converter
 
-Turn a DaVinci Resolve timeline into a Pro Tools session, without an AAF in between.
+Get a DaVinci Resolve timeline into Pro Tools accurately, starting from Resolve's
+native timeline export (`.drt`) and not from Resolve's AAF.
 
-DRT Converter reads Resolve's native timeline export (`.drt`), consolidates the
-audio into Pro Tools-friendly media, and builds the session directly inside
-Pro Tools: clips, fades and crossfades, clip gain and volume rides, busses,
-markers and track colours.
+The `.drt` carries more than Resolve's own AAF export does, including sub-frame
+source positions and reel names. DRT Converter reads it directly, consolidates
+the audio into Pro Tools-friendly media, and delivers clips, fades and
+crossfades, clip gain and volume rides, busses, markers and track colours.
+
+## Two ways to deliver
+
+- **Build the session in Pro Tools.** With Pro Tools on the same Mac, the app
+  creates the session for you.
+- **Export an AAF.** No Pro Tools needed. Write an AAF with linked or embedded
+  media and hand it to whoever is doing the sound work.
 
 ## Downloads
 
@@ -19,9 +27,10 @@ Both are signed and notarized.
 
 ## Requirements
 
-- Mac with Apple silicon
-- Pro Tools 2025.6 or later, with the scripting server enabled
-- DaVinci Resolve Studio for the Bridge panel
+- Apple silicon Mac, macOS 11 or later
+- DaVinci Resolve, to export the `.drt`. The Bridge panel needs Resolve Studio.
+- Pro Tools 2025.6 or later with the scripting server enabled, only if you want
+  the session built directly in Pro Tools. AAF export works without it.
 - Tested with DaVinci Resolve 21.2 and Pro Tools 2026.4
 
 ## Reporting a problem
